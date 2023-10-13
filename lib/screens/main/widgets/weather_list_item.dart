@@ -8,14 +8,15 @@ import '../../../core/constants/color_constants.dart';
 
 import '../../../widgets/svg_widget.dart';
 
-
 class WeatherListItem extends StatefulWidget {
   final model;
+  final bool? isOrange;
   final bool isDay;
   const WeatherListItem({
     super.key,
     required this.model,
     required this.isDay,
+    this.isOrange,
   });
 
   @override
@@ -62,7 +63,9 @@ class _WeatherListItemState extends State<WeatherListItem> {
           width: 50,
           height: 100,
           decoration: BoxDecoration(
-              color: _isOrange ? ColorConstants.rRedColor : Colors.transparent,
+              color: widget.isOrange == false
+                  ? Colors.transparent
+                  : (_isOrange ? ColorConstants.rRedColor : Colors.transparent),
               borderRadius: BorderRadius.circular(11)),
         ),
         Positioned(

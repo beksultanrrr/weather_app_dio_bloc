@@ -5,7 +5,7 @@ import 'package:weather_app/core/models/weather_days_model.dart';
 
 
 
-class WeatherModel {
+class WeatherModel extends {
   final DateTime dateTime;
   final double temp;
   final String city;

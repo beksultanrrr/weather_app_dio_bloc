@@ -34,7 +34,7 @@ String formattedDate = "${dateTime.year}-${dateTime.month.toString().padLeft(2, 
   Future<void> _getWeatherEvent(
       GetWeatherEvent event, Emitter<MainState> emit) async {
     final firstDate = FormatDate(DateTime.now().toString());
-    final secondDate = FormatDate(DateTime.now().add(const Duration(days: 7)).toString());
+    final secondDate = FormatDate(DateTime.now().add(const Duration(days: 6)).toString());
     print(firstDate);
     print(secondDate);
     final response = await DioService().request(

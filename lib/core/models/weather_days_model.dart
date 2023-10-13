@@ -46,8 +46,16 @@ class WeatherDaysModel {
   }
 
   factory WeatherDaysModel.fromMap(Map<String, dynamic> map) {
+    final test = DateTime.fromMillisecondsSinceEpoch(map['datetimeEpoch'] * 1000 as int);
+
+  final  currentDate = DateTime.now();
+
+  final  test2 = currentDate.difference(test);
+
+  if(test2.inHours > 0)
+
     return WeatherDaysModel(
-      dateTime: DateTime.fromMillisecondsSinceEpoch(map['datetimeEpoch'] * 1000 as int),
+      dateTime: ,
       temp: map['temp'] ?? 0.0,
       condition: map['conditions'][1] as String,
       icon: map['icon'] as String,

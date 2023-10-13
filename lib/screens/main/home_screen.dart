@@ -167,6 +167,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
                                       TapBarSevenDaysItem(
                                         model: state.weatherTomorrow,
                                         isDay: false,
+                                        isOrange: false,
                                       ),
                                       TapBarSevenDaysItem(
                                         model: state.weather7Days,
@@ -191,8 +192,9 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
 class TapBarSevenDaysItem extends StatelessWidget {
   final List model;
   final bool isDay;
+  final bool? isOrange;
   const TapBarSevenDaysItem(
-      {super.key, required this.model, required this.isDay});
+      {super.key, required this.model, required this.isDay, this.isOrange});
 
   @override
   Widget build(BuildContext context) {
@@ -204,6 +206,7 @@ class TapBarSevenDaysItem extends StatelessWidget {
           return Padding(
               padding: const EdgeInsets.only(left: 10),
               child: WeatherListItem(
+                isOrange: isOrange,
                 model: item,
                 isDay: isDay,
               ));
